@@ -1,0 +1,5 @@
+# Diário de Estudos de Cibersegurança - Rodrigo Amaral (16/08/2026 )
+
+## Status Atual do Lab:
+- Servidor: Ativo no LG K9 (Android/Termux).
+- Conectividade: Túnel SSH (Serveo.net) operando.
