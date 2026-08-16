@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Minha Micro Nuvem</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 300px; text-align: center; }
+        h2 { color: #1a73e8; margin-bottom: 20px; }
+        input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background: #1a73e8; color: white; border: none; padding: 10px; width: 100%; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        button:hover { background: #1557b0; }
+        .error { color: red; font-size: 14px; margin-top: 10px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>🔒 Área Restrita</h2>
+        <input type="text" id="usuario" placeholder="Usuário">
+        <input type="password" id="senha" placeholder="Senha">
+        <button onclick="validarLogin()">Entrar</button>
+        <div id="erro" class="error">Usuário ou senha incorretos!</div>
+    </div>
+
+    <script>
+        function validarLogin() {
+            // Defina seu usuário e senha abaixo
+            var usuarioCorreto = "rodrigo";
+            var senhaCorreto = "minhasenha123"; 
+
+            var usuarioDigitado = document.getElementById("usuario").value;
+            var senhaDigitada = document.getElementById("senha").value;
+
+            if (usuarioDigitado === usuarioCorreto && senhaDigitada === senhaCorreto) {
+                // Salva a permissão na sessão e redireciona para o painel
+                sessionStorage.setItem("autenticado", "true");
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("erro").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
